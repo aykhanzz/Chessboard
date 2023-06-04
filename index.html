@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Şahmat Taxtası</title>
+  <style>
+    .chessboard {
+      display: flex;
+      flex-wrap: wrap;
+      width: 400px;
+      height: 400px;
+    }
+
+    .chessboard div {
+      width: 50px;
+      height: 50px;
+    }
+
+    .white {
+      background-color: rgb(247, 230, 230);
+    }
+
+    .black {
+      background-color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="chessboard"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var chessboard = document.querySelector('.chessboard');
+
+      for (let row = 0; row < 8; row++) {
+        for (let col = 0; col < 8; col++) {
+          let cell = document.createElement('div');
+          if ((row + col) % 2 === 0) {
+            cell.className = 'white';
+          } else {
+            cell.className = 'black';
+          }
+          chessboard.appendChild(cell);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
